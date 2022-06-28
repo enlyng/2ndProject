@@ -24,7 +24,7 @@ public class listController_notice_admin extends HttpServlet {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
-		int totalCount = dao.selectCount(map);
+		int totalCount = dao.noticeCount(map);
 		
 		
 		int pageNum = 1;

@@ -88,42 +88,44 @@
     <p class="sub_title mb_none">문의하기</p>
 </div>
 <div class="row cont_qna cont_news">
-    <table cellpadding="0" cellspacing="0" class="table">
-        <caption>Q&A 게시판</caption>
+    <table cellpadding="0" cellspacing="0" style="border: 1px solid lightgray">
+        <caption>Q&amp;A 게시판</caption>
         <colgroup>
+          <col width="15%"/>
           <col width="20%"/>
-          <col width="30%"/>
+          <col width="15%"/>
           <col width="20%"/>
+          <col width="15%"/>
           <col width="*"/>
 	    </colgroup>
 	      <tbody>
 	          <tr>
-	              <th class="text-center table-success"
-	                  style="vertical-align:middle;">작성자</th>
+	              <th class="text-center"
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">작성자</th>
 	              <td>
 	                  ${dto.name }
 	              </td>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">작성일</th>
+	              <th class="text-center"
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">작성일</th>
 	              <td>
 	                  ${dto.postdate }
 	              </td>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">번호</th>
+	              <th class="text-center"
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">번호</th>
 	              <td>
 	                 ${dto.idx }
 	              </td>
 	          </tr>
 	          <tr>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">제목</th>
+	              <th class="text-center" 
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">제목</th>
 	              <td colspan="3">
 	                  ${dto.title }
 	              </td>
 	          </tr>
 	          <tr>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">내용</th>
+	              <th class="text-center" 
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">내용</th>
 	              <td colspan="3">
 	                  ${dto.content }
 	              </td>

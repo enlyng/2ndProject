@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Plantcare</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -101,7 +101,7 @@
             </li> -->
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider"> -->
 
             <!-- Heading -->
             <!-- <div class="sidebar-heading">
@@ -130,13 +130,15 @@
             </li> -->
 
             <!-- Nav Item - Charts -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="charts.jsp">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span>
+            <li class="nav-item">
+                <a class="nav-link" href="./EmailSendMain.jsp">
+                   <i class="fas fa-fw fa-envelope"></i>
+                    <span>Send Mail</span>
                 </a>
-            </li> -->
-
+            </li>
+           
+            <hr class="sidebar-divider" />
+            
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTables"
@@ -168,11 +170,10 @@
 
         </ul>
         <!-- End of Sidebar -->
-
+        
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
+		<!-- Main Content -->
             <div id="content">
 
                 <!-- Topbar -->
@@ -380,6 +381,7 @@
 
                 </nav>
                 <!-- End of Topbar -->
+		
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -417,7 +419,11 @@
                                         <tr>
                                             <td>${ map.totalCount - (((map.pageNum-1) * map.pageSize) + loop.index) }</td>
                                             <td><a href="../plantcare/noticeview_admin.do?idx=${ row.idx }">${ row.title }</a></td>
-                                            <td><a href="../plantcare/download.do">${ row.ofile }</a></td>
+                                            <td>
+                                            <%-- <c:if test="${ not empty row.ofile }"> --%>
+											<a href="../plantcare/download.do?ofile=${ row.ofile }&sfile=${ row.sfile }&idx=${ row.idx }">${ row.ofile }</a>
+											<%-- </c:if> --%>
+											</td>
                                             <td>${ row.postdate }</td>
                                         </tr>
                                     </c:forEach>    

@@ -37,7 +37,7 @@
         <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./Plant_main.jsp">
                 <!-- <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div> -->
@@ -101,7 +101,7 @@
             </li> -->
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider"> -->
 
             <!-- Heading -->
             <!-- <div class="sidebar-heading">
@@ -130,13 +130,15 @@
             </li> -->
 
             <!-- Nav Item - Charts -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span>
+           <li class="nav-item">
+                <a class="nav-link" href="./EmailSendMain.jsp">
+                   <i class="fas fa-fw fa-envelope"></i>
+                    <span>Send Mail</span>
                 </a>
-            </li> -->
-
+            </li>
+           
+            <hr class="sidebar-divider" />
+            
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTables"
@@ -150,8 +152,8 @@
                         <a class="collapse-item" href="../plantcare/userlist.do">Users</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Board:</h6>
-                        <a class="collapse-item" href="../plantcare/noticelist.do">Notice</a>
-                        <a class="collapse-item" href="../plantcare/qnalist.do">Q&amp;A</a>
+                        <a class="collapse-item" href="../plantcare/noticelist_admin.do">Notice</a>
+                        <a class="collapse-item" href="../plantcare/qnalist_admin.do">Q&amp;A</a>
                         <a class="collapse-item" href="../plantcare/contactlist.do" active>Contact</a>
                         <a class="collapse-item" href="../plantcare/applicationlist.do">Application</a>
                     </div>
@@ -429,7 +431,7 @@
                                             <td>${ row.phone }</td>
                                             <td>${ row.message }</td>
                                             <td>${ row.subject }</td>
-                                            <td>${ row.ofile }</td>
+                                            <td><a href="../plantcare/download.do?ofile=${ row.ofile }&sfile=${ row.sfile }&idx=${ row.idx }">${ row.ofile }</a></td>
                                             <td>${ row.regidate }</td>
                                         </tr>
                                      </c:forEach>

@@ -1,3 +1,4 @@
+<%@page import="utils.CookieManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -22,6 +23,15 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+   <%
+    //loginId 라는 이름의 쿠키를 읽어온다.
+    String loginId = CookieManager.readCookie(request, "loginId");
+    //앞에서 읽어온 쿠키값이 있다면 checked 속성값을 변수에 설정한다.
+    String cookieCheck = "";
+    if(!loginId.equals("")){
+    	cookieCheck = "checked";
+    }
+    %>
 </head>
 <!-- <body class="bg-gradient" style="background-color: #83C3BA;"> -->
 <body class="bg-gradient" style="background:transparent;">
@@ -47,8 +57,9 @@
                                         <div class="form-group was-validated" >
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address..." name="useremail" required>
-                                            <div class="invalid-feedback"> 이메일 아이디를 입력해주세요.</div>
+                                                placeholder="Enter Email Address..." name="useremail" value="<%=loginId %>" id="id" oninput="checkId()" required>
+                                            <div class="valid-feedback" >사용가능한 이메일입니다.</div>
+                                            <div class="invalid-feedback" >유효하지 않은 이메일입니다.</div>
                                         </div>
                                         <div class="form-group was-validated">
                                             <input type="password" class="form-control form-control-user"
@@ -57,7 +68,7 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <input type="checkbox" name="save_check" class="custom-control-input" value="Y"  <%= cookieCheck %> id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">사용자 기억하기</label>
                                             </div>
                                         </div>

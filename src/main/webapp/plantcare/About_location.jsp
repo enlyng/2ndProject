@@ -50,7 +50,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<title>(주)체인지메이커</title>
+<title>Plantcare</title>
 
 <link rel="stylesheet" href="https://www.changemaker.kr/css/main.css" type="text/css" />
 <link rel="stylesheet" href="https://www.changemaker.kr/css/default.css" type="text/css" />
@@ -80,7 +80,7 @@
        
             <div class="sub_intro location_intro">
     <div class="pc_none intro_img"><img src="https://www.changemaker.kr/images/mobile/about/location_bg_mb.jpg" alt="체인지메이커로 오시는 길 How to come" /></div>
-    <p class="sub_title mb_none">체인지메이커로 오시는 길<br><span class="txt_bold">How to come</span></p>
+    <p class="sub_title mb_none">Plantcare로 오시는 길<br><span class="txt_bold">How to come</span></p>
 </div>
     <div class="cont_location">
     <div class="location_space" id = "location_space"></div>
@@ -92,23 +92,13 @@
 	<script>
 		var container = document.getElementById('location_space');
 		var options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			center: new kakao.maps.LatLng(37.4784843, 126.8788376),
 			level: 3
 		};
 
 		var map = new kakao.maps.Map(container, options);
 	</script>
-    <!-- <script>
-    const map = new naver.maps.Map('location_space',{
-        center: new naver.maps.LatLng(35.175739, 129.126355),
-        zoom: 17
-    });
-
-    const marker = new naver.maps.Marker({
-        map: map,
-        position : new naver.maps.LatLng(35.175739, 129.126355)
-    });
-	</script> -->
+	
 <jsp:include page="./commons/Footer.jsp" />
        <!--  <script>
     $(".first_menu").mouseenter(function(){

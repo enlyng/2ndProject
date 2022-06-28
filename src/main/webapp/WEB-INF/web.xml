@@ -3,7 +3,7 @@
   <display-name>2ndProject</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>Plant_main.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.jsp</welcome-file>
@@ -53,16 +53,22 @@
 	<!-- 게시판 페이징 처리를 위한 파라미터 설정 -->
 	<context-param>
 		<param-name>POSTS_PER_PAGE</param-name>
-		<param-value>2</param-value>
+		<param-value>10</param-value>
 	</context-param>
 	<context-param>
 		<!-- 한블럭당 출력할 페이지 수  -->
 		<param-name>PAGES_PER_BLOCK</param-name>
-		<param-value>2</param-value>
+		<param-value>5</param-value>
 	</context-param>
 	
 	<context-param>
 		<param-name>maxPostSize</param-name>
 		<param-value>1024000</param-value>
 	</context-param>
+	
+	<context-param>
+		<param-name>CHAT_ADDR</param-name>
+		<param-value>ws://localhost:8088/2ndProject</param-value>
+	</context-param>
+	
 </web-app>

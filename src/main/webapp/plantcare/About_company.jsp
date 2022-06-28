@@ -82,7 +82,7 @@
 	<jsp:include page="./commons/Header.jsp" />
             <div class="sub_intro company_intro">
     <div class="pc_none intro_img"><img src="https://www.changemaker.kr/images/mobile/about/company_bg_mb.jpg" alt="새로움을 만드는 사람들 체인지메이커" /></div>
-    <p class="sub_title mb_none">새로움을 만드는 사람들<br><span class="txt_bold">체인지메이커</span></p>
+    <p class="sub_title mb_none">새로운 플랜트 라이프<br><span class="txt_bold">Plantcare</span></p>
 </div>
     <div class="cont_company">
 
@@ -108,13 +108,13 @@
             <div class="box">
                 <div class="company_logo"><img src="./Plant_files/company_img01.png" alt="체인지메이커 로고" /></div>
                 <p class="slogan"><span class="bold">새로움</span>을 만들어내기 위해 다양한 방법으로 도전하고<br>노력을 아끼지 않는 사람들이 모였습니다</p>
-                <p class="text">(주)체인지메이커는 이러한 원칙을 실현하기 위해 우리 기업만의 문화를 만들어 나가고 있습니다.<br><span class="bold">'회사와 직원이 함께 성장하는 것'</span>이 체인지메이커가 추구하는 기업의 목표입니다.</p>
+                <p class="text">이러한 원칙을 실현하기 위해 우리 기업만의 문화를 만들어 나가고 있습니다.<br><span class="bold">'회사와 직원이 함께 성장하는 것'</span>이 우리가 추구하는 기업의 목표입니다.</p>
             </div>
         </div>
         
         <div class="vision mb_none">
             <div class="vision_cont">
-                <div class="cont_title">체인지메이커 비전</div>
+                <div class="cont_title">Plnatcare 비전</div>
                 <div class="center">
                     <div>
                         <span>화훼산업의 질적 개선을 통한</span>
@@ -141,7 +141,7 @@
 
         <div class="talent mb_none">
             <div class="talent_cont">
-                <div class="cont_title">체인지메이커 인재상</div>
+                <div class="cont_title">Plantcare 인재상</div>
                 <div class="talent_img">
                     <ul>
                         <li class="talent_img01"><div><span class="bold">Polite</span><span>예의바르고</span></div></li>
@@ -150,7 +150,7 @@
                     </ul>
                 </div>
                 <div class="talent_text">
-                    <div class="left"><span>체인지메이커의<br><img src="./Plant_files/talent_3person.png" alt=""></span></div>
+                    <div class="left"><span>Plantcare의<br><img src="./Plant_files/talent_3person.png" alt=""></span></div>
                     <div class="right">
                         <ul>
                             <li>

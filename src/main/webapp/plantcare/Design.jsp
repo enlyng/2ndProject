@@ -4,6 +4,7 @@
 <html lang="ko">
 
 <head>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164229575-1"></script>
 <script>
@@ -30,6 +31,10 @@
     fbq('init', '653878285453364');
     fbq('track', 'PageView');
 </script>
+<script
+      src="https://kit.fontawesome.com/54b3b8eebf.js"
+      crossorigin="anonymous"
+    ></script>
 <noscript><img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=653878285453364&ev=PageView&noscript=1" /></noscript>
 <!-- End Facebook Pixel Code -->
@@ -71,6 +76,8 @@
 
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+
+
 </head>
 
 <body>
@@ -167,19 +174,19 @@
             </div>
         </div>
         <div class="answer">
-            <div class="text">걱정하지 마세요<br><span class="bold">체인지메이커의 그린오피스 서비스</span>로<br>업무 공간을 디자인해드리겠습니다</div>
+            <div class="text">걱정하지 마세요<br><span class="bold">Plantcare의 그린오피스 서비스</span>로<br>업무 공간을 디자인해드리겠습니다</div>
         </div>
     </div>
 
     <div class="cont_reason mb_none">
         <span>WHY?</span>
-        <p>왜 많은 분들이 체인지메이커를 믿고 맡기실까요?</p>
+        <p>왜 많은 분들이 Plantcare를 믿고 맡기실까요?</p>
         <div class="circle">
             <div class="center"><img src="Plant_files/why_bg.png"
                     alt="기획, 디자인, 시공 ONE-STEP 진행 가능, Plan, Design, Construction" /></div>
             <div class="text">
                 <div>
-                    <div class="first">체인지메이커의 <br />자체 인력으로</div>
+                    <div class="first">Plantcare의 <br />자체 인력으로</div>
                     <div class="second">진행하고 있습니다</div>
                 </div>
             </div>
@@ -234,7 +241,7 @@
             <div class="cont_price_thumbnail"><img src="Plant_files/ask_price.png" alt="견적문의" /></div>
             <div class="cont_price_text">
                 <span class="service">서비스 문의하기</span>
-                <span class="title"><span>체인지메이커</span>가 완성하는<br>식물을 통한 힐링 공간</span>
+                <span class="title"><span>Plantcare</span>가 완성하는<br>식물을 통한 힐링 공간</span>
                 <p class="text">친환경적이고 안락한 실내의 공간이 중요한<br>시대! 최적의 플랜과 관리로 바쁜 일상에<br>손쉽게 자연을 초대하세요.</p>
                 <div class="viewMore_btn cursor" onclick="$('.modal').show()"><a><span>견적문의</span></a></div>
             </div>
@@ -260,10 +267,10 @@
             </tr>
             <tr>
                 <td colspan="1">
-                    <input type="text" class="address" required name="address">
+                    <input type="text" class="address" required name="address" style="font-size: 18px">
                 </td>
                 <td colspan="1">
-                    <input type="text" required name="address_detail">
+                    <input type="text" required name="address_detail" style="font-size: 18px">
                 </td>
             </tr>
             <tr>
@@ -272,10 +279,10 @@
             </tr>
             <tr>
                 <td colspan="1">
-                    <input type="text" name="company" required>
+                    <input type="text" name="company" required style="font-size: 18px">
                 </td>
                 <td colspan="1">
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" required style="font-size: 18px"> 
                 </td>
             </tr>
             <tr>
@@ -284,10 +291,10 @@
             </tr>
             <tr>
                 <td colspan="1">
-                    <input type="email" name="email" required>
+                    <input type="email" name="email" required style="font-size: 18px">
                 </td>
                 <td colspan="1">
-                    <input type="text" name="phone" required>
+                    <input type="text" name="phone" required style="font-size: 18px">
                 </td>
             </tr>
             <tr>
@@ -295,10 +302,11 @@
             </tr>
             <tr>
                 <td colspan="2">
-                	<img
+                	<label for="file"><img
                           src="./Plant_files/icon_file.png"
                           alt="파일 아이콘"
-                      />
+                      /></label>
+                    <input class="upload-name" value="첨부파일" placeholder="첨부파일" readonly />
                     <input type="file" accept="image/*" name="ofile">
                 </td>
             </tr>
@@ -308,7 +316,7 @@
             </tr>
             <tr>
                 <td colspan="4">
-                    <textarea name="message" cols="30" rows="5"
+                    <textarea name="message" cols="30" rows="5" style="font-size: 18px"
                         placeholder="그린오피스 서비스와 관련된 추가 문의사항 및 요청사항을 적어주세요."></textarea>
                 </td>
             </tr>
@@ -332,7 +340,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="text" class="address" required name="address">
+                    <input type="text" class="address" required name="address" style="font-size: 18px">
                 </td>
             </tr>
             <tr>
@@ -340,7 +348,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="text" required name="address_detail">
+                    <input type="text" required name="address_detail" style="font-size: 18px">
                 </td>
             </tr>
             <tr>
@@ -350,7 +358,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="text" name="company" required>
+                    <input type="text" name="company" required style="font-size: 18px">
                 </td>
             </tr>
             <tr>
@@ -358,7 +366,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" required style="font-size: 18px">
                 </td>
             </tr>
             <tr>
@@ -366,7 +374,8 @@
             </tr>
             <tr>
                 <td>
-                    <input type="email" name="email" required>
+                    <input type="email" name="email" required style="font-size: 18px">
+                    
                 </td>
             </tr>
             <tr>
@@ -374,7 +383,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="text" name="phone" required>
+                    <input type="text" name="phone" required style="font-size: 18px">
                 </td>
             </tr>
             <tr>
@@ -382,7 +391,47 @@
             </tr>
             <tr>
                 <td>
-                    <input type="file" accept="image/*" name="ofile">
+                	<label for="file"><img
+                          src="./Plant_files/icon_file.png"
+                          alt="파일 아이콘"
+                      /></label>
+                	<input class="upload-name" value="첨부파일" placeholder="첨부파일" readonly />
+                    <input type="file" id="file" accept="image/*" name="ofile" multiple >
+                    <script>
+                    	$("#file").on('change',function(){
+                    		var fileName = $("#file").val();
+                    		$(".upload-name").val(fileName);
+                    	});
+                    </script>
+                    <style>
+                    .upload-name{
+                    	displat:inline-block;
+                    	padding: 5px 10px;
+                    	vertical-align:middle;
+                    	border:none;
+                    	outline:none;
+                    	width:210px;
+                    	height:40.87px;
+                    	color: #87C5BA;
+                    }
+                    label{
+                    	display:inline-block;
+                    	padding:6px 20px;
+                    	color: black;
+                    	vertical-align:middle;
+                    	
+                    	cursor:pointer;
+                    	
+                    }
+                    input[type=file]{
+                    	position:absolute;
+                    	width:0;
+                    	height:0;
+                    	padding:0;
+                    	overflow:hidden;
+                    	border:0;
+                    }
+                    </style>
                 </td>
             </tr>
 
@@ -391,7 +440,7 @@
             </tr>
             <tr>
                 <td>
-                    <textarea name="message" cols="30" rows="5"
+                    <textarea name="message" cols="30" rows="5" style="font-size: 18px"
                         placeholder="그린오피스 서비스와 관련된 추가 문의사항 및 요청사항을 적어주세요."></textarea>
                 </td>
             </tr>
@@ -436,7 +485,11 @@
         }
     })
 </script>
-    
+<script>
+$("input[type='file']").on('change',function(){
+	$(this).next('.file-label').html(event.target.file.name);
+})
+</script>
 <!--         <script>
     $(".first_menu").mouseenter(function(){
         $(".menu_2depth").slideDown(300);

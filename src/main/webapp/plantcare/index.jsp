@@ -12,7 +12,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Plantcare</title>
 
     <!-- Custom fonts for this template-->
     <link
@@ -169,13 +169,15 @@
         </li>
  -->
         <!-- Nav Item - Charts -->
-   <!--      <li class="nav-item">
-          <a class="nav-link" href="charts.jsp">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a
-          >
-        </li>
- -->
+   			<li class="nav-item">
+                <a class="nav-link" href="./EmailSendMain.jsp">
+                   <i class="fas fa-fw fa-envelope"></i>
+                    <span>Send Mail</span>
+                </a>
+            </li>
+           
+            <hr class="sidebar-divider" />
+            
         <!-- Nav Item - Tables -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTables"

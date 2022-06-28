@@ -87,10 +87,10 @@
 <jsp:include page="./commons/Header.jsp" />
         <div class="sub_intro qna_intro">
     <div class="pc_none intro_img"><img src="https://www.changemaker.kr/images/mobile/customer/qna_bg_mb.jpg" alt="체인지메이커에게 문의하세요" /></div>
-    <p class="sub_title mb_none">체인지메이커에게<br>문의하세요</p>
+    <p class="sub_title mb_none">Plantcare에게<br>문의하세요</p>
 </div>
-<div class="cont_qna">
-    <table cellpadding="0" cellspacing="0">
+<div class="cont_qna table-responsive">
+    <table cellpadding="0" cellspacing="0" >
         <caption>Q&amp;A 게시판</caption>
         <colgroup>
             <col style="width:15%;">
@@ -99,7 +99,7 @@
             <col style="width:15%;">
         </colgroup>
         <thead>
-            <tr class="text-center">
+            <tr class="text-center" style="background-color:#87C5BA; color:white">
                 <th>번호</th>
                 <th>제목</th>
                 <th>글쓴이</th>
@@ -139,7 +139,8 @@
        </div>
     </div>
 <jsp:include page="./commons/Footer.jsp" />
-     
+
+ 
      <!--    <script>
     $(".first_menu").mouseenter(function(){
         $(".menu_2depth").slideDown(300);

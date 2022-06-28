@@ -57,7 +57,7 @@ public class BoardDAO extends DBConnPool {
 		
 		BoardDTO dto = new BoardDTO();
 		
-		String query = "SELECT email FROM memberlist WHERE email = ?";
+		String query = " SELECT email FROM memberlist WHERE email = ? ";
 		
 		try {
 			psmt = con.prepareStatement(query);
@@ -74,31 +74,6 @@ public class BoardDAO extends DBConnPool {
 		}
 		
 		return dto;
-	}
-	// idValidate2
-	public int idValidate2(String uid) {
-		
-		int result = 0;
-		
-		String query = "select email FROM memberlist WHERE email = ?";
-		
-		try {
-			psmt = con.prepareStatement(query);
-			psmt.setString(1, uid);
-			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
-				result = 1;
-			} else {
-				result = 2;
-			}
-			
-		} catch (Exception e) {
-			System.out.println("아이디 중복 확인 중 오류 발생");
-			e.printStackTrace();
-		}
-		
-		return result;
 	}
 	
 	public int selectCount(Map<String, Object> map) {
@@ -299,9 +274,6 @@ public class BoardDAO extends DBConnPool {
 
 		String query = " SELECT COUNT(*) FROM noticeboard ";
 		if (map.get("searchWord") != null) {
-			/*
-			 * 만약 제목에 '노트북'이라고 검색했다면... => where title like '%노트북%' 과 같이 쿼리문이 추가될 것이다.
-			 */
 			query += " WHERE " + map.get("searchField") + " " + " LIKE '%" + map.get("searchWord") + "%'";
 		}
 		try {
@@ -450,15 +422,14 @@ public class BoardDAO extends DBConnPool {
 		int result = 0;
 		try {
 			//특정 일련번호에 해당하는 게시물을 수정한다.
-			String query = " UPDATE noticeboard SET title=?, name=?, content=?, ofile=?, sfile=? WHERE idx=? ";
+			String query = " UPDATE noticeboard SET title=?,content=?, ofile=?, sfile=? WHERE idx=? ";
 			
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, dto.getTitle());
-			psmt.setString(2, dto.getName());
-			psmt.setString(3, dto.getContent());
-			psmt.setString(4, dto.getOfile());
-			psmt.setString(5, dto.getSfile());
-			psmt.setString(6, dto.getIdx());
+			psmt.setString(2, dto.getContent());
+			psmt.setString(3, dto.getOfile());
+			psmt.setString(4, dto.getSfile());
+			psmt.setString(5, dto.getIdx());
 			
 			result = psmt.executeUpdate();
 		}

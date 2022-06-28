@@ -15,7 +15,7 @@ import utils.JSFunction;
 public class deleteController_notice extends HttpServlet {
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String idx = req.getParameter("idx");
 		
 		BoardDTO dto = new BoardDTO();
@@ -24,11 +24,11 @@ public class deleteController_notice extends HttpServlet {
 		
 		HttpSession session = req.getSession();
 		String sessionId = session.getAttribute("UserEmail").toString(); 
-		
+		System.out.println(sessionId);
 		int delResult = 0;
 
-		//현재 삭제하는 사람이 해당 글의 작성자가 맞는지 확인
-		if(sessionId.equals(dto.getEmail())){ //작성자 본인이 맞으면...
+//		//현재 삭제하는 사람이 해당 글의 작성자가 맞는지 확인
+//		if(sessionId.equals(dto.getEmail())){ //작성자 본인이 맞으면...
 			
 			//DTO객체에 일련번호를
 			dto.setIdx(idx);
@@ -42,11 +42,11 @@ public class deleteController_notice extends HttpServlet {
 			else {
 				JSFunction.alertBack(resp, "삭제에 실패하였습니다.");
 			}
-		}
-		else{
-			//작성자 본인이 아니면 삭제할 수 없음.
-			JSFunction.alertBack( resp, "본인만 삭제할 수 있습니다.");
-			return;
-		}
+//		}
+//		else{
+//			//작성자 본인이 아니면 삭제할 수 없음.
+//			JSFunction.alertBack( resp, "본인만 삭제할 수 있습니다.");
+//			return;
+//		}
 	}
 }

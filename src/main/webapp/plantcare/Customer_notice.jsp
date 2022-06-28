@@ -98,7 +98,7 @@
             <col style="width:15%;">
         </colgroup>
         <thead>
-            <tr class="text-center">
+            <tr class="text-center" style="background-color:#80C2BA; color:white">
                 <th>번호</th>
                 <th>제목</th>
                 <th>작성자</th>
@@ -112,13 +112,13 @@
            	<td>
 			${ map.totalCount - (((map.pageNum-1) * map.pageSize) + loop.index) }
 			</td>
-            <td class="text-start"><a href="../plantcare/noticeview_customer.do?idx=${ row.idx }">${ row.title }&nbsp; <span class="badge bg-dark">조회수 ${ row.visitcount }</span></a></td>
+            <td class="text-start"><a href="../plantcare/noticeview_customer.do?idx=${ row.idx }">${ row.title }&nbsp; <span class="badge rounded-pill" style="background-color:#80C2BA">조회수 ${ row.visitcount }</span></a></td>
 			<td>${ row.name }</td>
 			<td>${ row.postdate }</td>
 			<td>
 			<!-- 첨부파일이 있을때만 다운로드 링크를 출력함. -->
 			<c:if test="${ not empty row.ofile }">
-			<a href="../plantcare/download.do?ofile=${ row.ofile }&sfile=${ row.sfile }&idx=${ row.idx }"><i class="bi-pin-angle-fill" style="font-size: 1rem;"></i></a>
+			<a href="../plantcare/download.do?ofile=${ row.ofile }&sfile=${ row.sfile }&idx=${ row.idx }"><i class="bi bi-file-earmark-arrow-down-fill" style="color:#80C2BA; font-size: 1rem;"></i></a>
 			</c:if>
 			</td>
             </tr>

@@ -37,7 +37,7 @@
         <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./Plant_main.jsp">
                 <!-- <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div> -->
@@ -52,7 +52,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.jsp">
+                <a class="nav-link" href="./index.jsp">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -130,12 +130,15 @@
             </li> -->
 
             <!-- Nav Item - Charts -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="charts.jsp">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span>
+            <li class="nav-item">
+                <a class="nav-link" href="./EmailSendMain.jsp">
+                   <i class="fas fa-fw fa-envelope"></i>
+                    <span>Send Mail</span>
                 </a>
-            </li> -->
+            </li>
+           
+            <hr class="sidebar-divider" />
+            
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
@@ -151,9 +154,9 @@
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Board:</h6>
                         <a class="collapse-item" href="../plantcare/noticelist_admin.do">Notice</a>
-                        <a class="collapse-item" href="QnA.jsp">Q&A</a>
+                        <a class="collapse-item" href="qnalist_admin.do">Q&amp;A</a>
                         <a class="collapse-item" href="../plantcare/contactlist.do">Contact</a>
-                        <a class="collapse-item" href="ApplicationForm.jsp">Application</a>
+                        <a class="collapse-item" href="../plantcare/applicationlist.do">Application</a>
                     </div>
                 </div>
             </li>

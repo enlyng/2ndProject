@@ -67,7 +67,7 @@
         <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./Plant_main.jsp">
                 <!-- <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div> -->
@@ -160,13 +160,15 @@
             </li> -->
 
             <!-- Nav Item - Charts -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="charts.jsp">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span>
+            <li class="nav-item">
+                <a class="nav-link" href="./EmailSendMain.jsp">
+                   <i class="fas fa-fw fa-envelope"></i>
+                    <span>Send Mail</span>
                 </a>
-            </li> -->
-
+            </li>
+           
+            <hr class="sidebar-divider" />
+            
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTables"
@@ -425,7 +427,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <form name="writeFrm" method="post" enctype="multipart/form-data" action="../plantcare/noticewrite.do" onsubmit="return validateForm(this);">
+                            <form name="writeFrm" method="post" enctype="multipart/form-data" action="../plantcare/noticeedit.do" onsubmit="return validateForm(this);">
                             <input type="hidden" name="idx" value="${param.idx }" />
                             <!-- 기존의 원본파일명 -->
 							<input type="hidden" name="prevOfile" value="${dto.ofile }" />
@@ -447,8 +449,47 @@
 								<tr>
 									<td>첨부파일</td>
 									<td>
-										<label class="file-label" for="chooseFile">Choose File</label>
-										<input class="file form-control" id="chooseFile" type="file" name="ofile" multiple>
+										<label for="file"><img
+					                          src="./Plant_files/icon_file.png"
+					                          alt="파일 아이콘"
+					                      /></label>
+					                	<input class="upload-name" value="첨부파일" placeholder="첨부파일" readonly />
+					                    <input type="file" id="file" accept="image/*" name="ofile"  >
+					                    <script>
+					                    	$("#file").on('change',function(){
+					                    		var fileName = $("#file").val();
+					                    		$(".upload-name").val(fileName);
+					                    	});
+					                    </script>
+					                    <style>
+					                    .upload-name{
+					                    	displat:inline-block;
+					                    	padding: 5px 10px;
+					                    	vertical-align:middle;
+					                    	border:none;
+					                    	outline:none;
+					                    	width:210px;
+					                    	height:40.87px;
+					                    	color: #87C5BA;
+					                    }
+					                    label{
+					                    	display:inline-block;
+					                    	padding:6px 20px;
+					                    	color: black;
+					                    	vertical-align:middle;
+					                    	
+					                    	cursor:pointer;
+					                    	
+					                    }
+					                    input[type=file]{
+					                    	position:absolute;
+					                    	width:0;
+					                    	height:0;
+					                    	padding:0;
+					                    	overflow:hidden;
+					                    	border:0;
+					                    }
+					                    </style>
 										${dto.ofile}
 									</td>
 								</tr>

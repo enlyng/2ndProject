@@ -96,7 +96,7 @@ public class editController_notice extends HttpServlet {
 			resp.sendRedirect("../plantcare/noticeview_admin.do?idx="+idx);
 		}
 		else {
-//			JSFunction.alertLocation(resp, "비밀번호 검증을 다시 진행해주세요.", "../mvcboard/view.do?idx="+idx);
+			JSFunction.alertBack(resp, "수정하기에 실패하였습니다.");
 		}
     	
 	}

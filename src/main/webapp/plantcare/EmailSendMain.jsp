@@ -1,16 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ include file="./Islogined.jsp"%>  
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<!-- Latest compiled and minified CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,16 +26,36 @@
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <script>
-function deletePost() {
-    var confirmed = confirm("정말로 삭제하겠습니까?"); 
-    if (confirmed) {
-        var form = document.writeFrm;      
-        form.method = "post"; 
-        form.action = "../plantcare/noticedelete.do"; 
-        form.submit();         
-    }
-}
+	//글쓰기 폼에서 누락된 내용이 있는지 확인하는 함수
+	function validateForm(form){
+		
+		if(form.title.value==""){
+			alert("제목을 입력하세요.");
+			form.title.focus();
+			return false;
+		}
+		if(form.content.value==""){
+			alert("내용 입력하세요.");
+			form.content.focus();
+			return false;
+		}
+	}
 </script>
+<<!-- style>
+.file-label {
+  margin-top: 30px;
+  background-color: #5b975b;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 35%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.file {
+  display: none;
+}
+</style> -->
 </head>
 
 <body id="page-top">
@@ -68,7 +82,7 @@ function deletePost() {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="./index.jsp">
+                <a class="nav-link" href="index.jsp">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -117,7 +131,7 @@ function deletePost() {
             </li> -->
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider"> -->
 
             <!-- Heading -->
             <!-- <div class="sidebar-heading">
@@ -145,15 +159,14 @@ function deletePost() {
                 </div>
             </li> -->
 
+            <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="./EmailSendMain.jsp">
-                   <i class="fas fa-fw fa-envelope"></i>
+                    <i class="bi bi-envelope-fill"></i>
                     <span>Send Mail</span>
                 </a>
             </li>
-           
-            <hr class="sidebar-divider" />
-            
+
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTables"
@@ -402,92 +415,66 @@ function deletePost() {
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Notice</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Contact mail</h1>
                     <p class="mb-4"></p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Notice</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">이메일 작성</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <form name="writeFrm">
-                            <input type="hidden" name="idx" value="${dto.idx }" />
+                            <form method="post"  action="SendProcess.jsp" >
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                   <colgroup>
-							          <col width="20%"/>
-							          <col width="30%"/>
-							          <col width="20%"/>
-							          <col width="*"/>
-								    </colgroup>
-								      <tbody>
-								          <tr>
-								              <th class="text-center table-success"
-								                  style="vertical-align:middle;">작성자</th>
-								              <td>
-								                  ${dto.name }
-								              </td>
-								              <th class="text-center table-success" 
-								                  style="vertical-align:middle;">작성일</th>
-								              <td>
-								                  ${dto.postdate }
-								              </td>
-								          </tr>
-								          <tr>
-								              <th class="text-center table-success" 
-								                  style="vertical-align:middle;">번호</th>
-								              <td>
-								                 ${dto.idx }
-								              </td>
-								              <th class="text-center table-success" 
-								                  style="vertical-align:middle;">조회수</th>
-								              <td>
-								                  ${dto.visitcount }
-								              </td>
-								          </tr>
-								          <tr>
-								              <th class="text-center table-success" 
-								                  style="vertical-align:middle;">제목</th>
-								              <td colspan="3">
-								                  ${dto.title }
-								              </td>
-								          </tr>
-								          <tr>
-								              <th class="text-center table-success" 
-								                  style="vertical-align:middle;">내용</th>
-								              <td colspan="3">
-								                <pre>${dto.content }</pre> 
-								              </td>
-								          </tr>
-								          <tr>
-								              <th class="text-center table-success" 
-								                  style="vertical-align:middle;">첨부파일</th>
-								              <td colspan="3">
-								                <c:if test="${not empty dto.ofile }">
-													${dto.ofile }
-													<a href="../plantcare/download.do?ofile=${dto.ofile }&sfile=${dto.sfile }&idx=${dto.idx }"><i class="bi-pin-angle-fill" style="font-size: 1rem;"></i></a>
-												</c:if>
-								              </td>
-								          </tr>
-								          <tr>
-								              <th class="text-center table-success" 
-								                  style="vertical-align:middle;">미리보기</th>
-								              <td colspan="3">
-								              <c:choose>
-										<c:when test="${fileType == 'image' }"><img src="../Uploads/${dto.sfile }" alt="" /></c:when>
-										<c:when test="${fileType eq 'audio' }"><audio src="../Uploads/${dto.sfile }"></audio></c:when>
-									</c:choose>
-								      	</td>
-								    </tr>
-								</tbody> 
+								<tr>
+									<td>
+										보내는 사람
+										<input type="text" class="form-control" name="from" style="width:30%;"  />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										받는 사람
+										<input type="text" class="form-control" name="to" value="" style="width:30%;" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										제목
+										<input type="text" class="form-control" name="subject" size="50" value="" style="width:40%;"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										형식
+										<div class="form-check">
+										  <label class="form-check-label" for="radio1">
+										  <input type="radio" class="form-check-input" id="radio1" name="format" value="text" checked/>Text</label>
+										  &nbsp;&nbsp;&nbsp;
+										</div>
+										<div class="form-check">
+										  <label class="form-check-label" for="radio2">
+										  <input type="radio" class="form-check-input" id="radio2" name="format" value="html"/>HTML</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<textarea name="content" cols="60" rows="10" class="form-control"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center">
+										<button type="submit" class="btn btn-outline-success">전송하기</button>
+										<button type="reset" class="btn btn-outline-danger">RESET</button>
+										<button type="button" class="btn btn-outline-info" onclick="location.href='../plantcare/contactlist.do';">
+											목록보기
+										</button>
+									</td>
+								</tr>
                                 </table>
-                                <button type="button" class="btn btn-outline-warning "  onclick="location.href='../plantcare/noticeedit.do?idx=${param.idx}';">수정하기</button>
-								<button type="button" class="btn btn-outline-danger" onclick="deletePost();">삭제하기</button>
-								<button type="button" class="btn btn-outline-info" onclick="location.href='../plantcare/noticelist_admin.do';">
-									목록보기
-								</button>
-							</form>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -496,7 +483,11 @@ function deletePost() {
 
             </div>
             <!-- End of Main Content -->
-
+<!-- <script>
+$("input[type='file']").on('change',function(){
+	$(this).next('.file-label').html(event.target.files[0].name);
+})
+</script> -->
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">

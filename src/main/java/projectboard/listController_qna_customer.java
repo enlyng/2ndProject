@@ -63,7 +63,7 @@ public class listController_qna_customer extends HttpServlet {
 		//커넥션 풀에 자원 반납
 		dao.close();
 		
-		String pagingImg = BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, "../plantcare/noticelist_customer.do");
+		String pagingImg = BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, "../plantcare/qnalist_customer.do");
 		//View로 전달할 데이터를 Map컬렉션에 저장함
 		//페이지 번호
 		map.put("pagingImg", pagingImg);

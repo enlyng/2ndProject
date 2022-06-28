@@ -89,66 +89,67 @@
 </div>
 <div class="row cont_qna cont_news">
     <table cellpadding="0" cellspacing="0" class="table">
-        <caption>Q&A 게시판</caption>
+        <caption>Notice</caption>
         <colgroup>
+<col width="15%"/>
           <col width="20%"/>
-          <col width="30%"/>
+          <col width="15%"/>
           <col width="20%"/>
-          <col width="*"/>
-	    </colgroup>
+          <col width="15%"/>
+          <col width="*"/>	    </colgroup>
 	      <tbody>
 	          <tr>
-	              <th class="text-center table-success"
-	                  style="vertical-align:middle;">작성자</th>
+	              <th class="text-center"
+	                  style="vertical-align:middle;background-color:#80C2BA; color:white;">작성자</th>
 	              <td>
 	                  ${dto.name }
 	              </td>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">작성일</th>
+	              <th class="text-center" 
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">작성일</th>
 	              <td>
 	                  ${dto.postdate }
 	              </td>
 	          </tr>
 	          <tr>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">번호</th>
+	              <th class="text-center" 
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">번호</th>
 	              <td>
 	                 ${dto.idx }
 	              </td>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">조회수</th>
+	              <th class="text-center" 
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">조회수</th>
 	              <td>
 	                  ${dto.visitcount }
 	              </td>
 	          </tr>
 	          <tr>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">제목</th>
+	              <th class="text-center" 
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">제목</th>
 	              <td colspan="3">
 	                  ${dto.title }
 	              </td>
 	          </tr>
 	          <tr>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">내용</th>
+	              <th class="text-center" 
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">내용</th>
 	              <td colspan="3">
 	                  ${dto.content }
 	              </td>
 	          </tr>
 	          <tr>
-	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">첨부파일</th>
+	              <th class="text-center" 
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">첨부파일</th>
 	              <td colspan="3">
 	                  <c:if test="${not empty dto.ofile }">
 			${dto.ofile }
-			<a href="../plantcare/download.do?ofile=${dto.ofile }&sfile=${dto.sfile }&idx=${dto.idx }"><i class="bi-pin-angle-fill" style="font-size: 1rem;"></i></a>
+			<a style="color:#80C2BA;" href="../plantcare/download.do?ofile=${dto.ofile }&sfile=${dto.sfile }&idx=${dto.idx }"> <i class="bi bi-file-earmark-arrow-down-fill" style="color:#80C2BA; font-size: 1rem;"></i>다운로드</a>
 			</c:if>
 			<!-- <button type="button" id="fileDlete" data-bs-toggle="modal" data-bs-target="#myModal">첨부파일삭제</button> -->
 	              </td>
 	          </tr>
 	          <tr>
 	              <th class="text-center table-success" 
-	                  style="vertical-align:middle;">미리보기</th>
+	                  style="vertical-align:middle; background-color:#80C2BA; color:white;">미리보기</th>
 	              <td colspan="3">
 	              <c:choose>
 			<c:when test="${fileType == 'image' }"><img src="../Uploads/${dto.sfile }" alt="" /></c:when>

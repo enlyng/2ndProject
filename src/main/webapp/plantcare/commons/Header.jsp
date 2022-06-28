@@ -1,5 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+String popupMode = "on"; 
+
+Cookie[] cookies = request.getCookies();
+if (cookies != null) {
+    for (Cookie c : cookies) {
+        String cookieName = c.getName();
+        String cookieValue = c.getValue();
+        if (cookieName.equals("PopupClose")) {
+            popupMode = cookieValue; 
+        }
+    }
+} 
+%>
 <!DOCTYPE html>
 <!-- saved from url=(0035)Plant_main.html/#contact -->
 <html lang="ko">
@@ -144,11 +158,76 @@
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="https://www.changemaker.kr/jQuery/slick.js"></script>
 	
+	<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	
 	
 	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	
+	
+<style>
+    div#popup{
+        position: absolute; top:200px; left:100px; color:white;  
+        width:400px; height:500px; background-color: white; border: 1px dotted lightgray;
+    }
+    div#popup>div{
+        position: relative; background-color:white; top:0px;
+        border:none; padding:10px;
+    }
+    
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+crossorigin="anonymous"></script>
+<script>
+$(function() {
+	//팝업창의 닫기 버튼을 클릭했을때...
+    $('#closeBtn').click(function() {
+    	//레이어 팝업창을 숨김처리한다.
+        $('#popup').hide();
+    	//하루동안 열지않음 체크박스에 체크된 경우에만 value를 얻어온다.
+        var chkVal = $("input:checkbox[id=inactiveToday]:checked").val();
+    	//jQuery ajax() 함수를 통해 요청한다.
+        $.ajax({
+        	//요청할 서버의 URL(경로)
+            url : './PopupCookie.jsp',
+            //전송방식
+            type : 'get',
+            //파라미터(요청시 전송할 값. 파라미터는 JSON형식으로 기술해야한다.)
+            data : {inactiveToday : chkVal},
+            //콜백 데이터의 형식 지정
+            dataType : "text",
+            //성공했을 때의 콜백 함수
+            success : function(resData) {
+            	//콜백 데이터는 매개변수 resData가 받는다.
+            	if(resData){
+            		console.log('있다');
+            	}
+            	else{
+            		console.log('없다');	
+            	}
+            	//콜백 데이터가 있다면 화면을 새로고침한다. F5를 누른 것과 동일하다.
+                if (resData != '') location.reload();
+            }
+        });
+    });
+});
+</script>
   </head>
+  
+  <div id="popup" style="z-index: 999">
+        <p align="center"><img style="padding-top:10px" id="popup" src="./Plant_files/serverout.png" alt="" /></p>
+        
+        <div class="form-check" align="right"><form name="popFrm">
+            <input type="checkbox" id="inactiveToday" value="1" />
+            <label for="inactiveToday" style="color:#276157">하루 동안 열지 않음</label>
+            <input type="button" style="background-color: #276157; color:white" class=" btn" value="닫기" id="closeBtn" />
+        </form></div>
+    </div>
 
   <body cz-shortcut-listen="true">
     <div class="contwrap">
@@ -248,6 +327,8 @@
               </ul>
             </li>
           </ul>
+          
+       
         </div>
       </div>
 
@@ -293,7 +374,7 @@
                       <a href="../plantcare/noticelist_customer.do">- Notice</a>
                     </li>
                     <li>
-                      <a href=".../plantcare/qnalist_customer.do">- Q&amp;A</a>
+                      <a href="../plantcare/qnalist_customer.do">- Q&amp;A</a>
                     </li>
                     <li>
                       <a href="/2ndProject/plantcare/Plant_main.jsp#contact"
@@ -365,8 +446,9 @@
             </div>
           </div>
         </div>
+        
       </div>
-
+	
       <script>
         $("#file_input").on("change", (e) => {
           $(".text").text(e.target.files[0].name);
@@ -441,6 +523,9 @@
           fbq("trackCustom", e.currentTarget.id);
         });
       </script>
+    </div>
+     <div style="position: fixed; right: 80px; bottom:0px; z-index: 999999;">
+       <img type="button" src="/2ndProject/plantcare/Plant_files/websocket_icon.png" onclick="window.open('/2ndProject/plantcare/MultiChatMain.jsp', '', 'width=400,height=400');" alt="소켓이미지" style="width: 100px; height: 100px"/>
     </div>
   </body>
 </html>

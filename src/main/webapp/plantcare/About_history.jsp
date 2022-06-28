@@ -78,7 +78,7 @@
     <jsp:include page="./commons/Header.jsp" />    
         <div class="sub_intro history_intro">
     <div class="pc_none intro_img"><img src="https://www.changemaker.kr/images/mobile/about/history_bg_mb.jpg" alt="체인지메이커가 만들어 온 HISTORY" /></div>
-    <p class="sub_title mb_none">체인지메이커가 만들어온<br><span class="txt_bold">HISTORY</span></p>
+    <p class="sub_title mb_none">Plantcare가 만들어온<br><span class="txt_bold">HISTORY</span></p>
 </div>
 <div class="cont_history">
         <ul class="first_cont">

@@ -27,10 +27,10 @@ public class BoardPage {
 		 */
 		int pageTemp = (((pageNum -1) / blockPage) * blockPage) +1;
 		
-//		if(pageTemp != 1) {
-//		}
-		pagingStr += "<li class=\"page-item\"><a class=\"page-link\" href='" + reqUrl + "?pageNum=1'><i class='bi bi-skip-backward-fill'></i></a></li>";
-		pagingStr += "<li class=\"page-item\"><a class=\"page-link\" href='" + reqUrl + "?pageNum=" + (pageTemp -1) + "'><i class='bi bi-skip-start-fill'></i></a></li>";
+		if(pageTemp != 1) {
+			pagingStr += "<li class=\"page-item\"><a class=\"page-link\" href='" + reqUrl + "?pageNum=1'><i class='bi bi-skip-backward-fill'></i></a></li>";
+			pagingStr += "<li class=\"page-item\"><a class=\"page-link\" href='" + reqUrl + "?pageNum=" + (pageTemp -1) + "'><i class='bi bi-skip-start-fill'></i></a></li>";
+		}
 		
 		/*
 		각 페이지 번호로 바로가기 링크 출력
@@ -59,4 +59,5 @@ public class BoardPage {
 		
 		return pagingStr;
 	}
+	
 }
